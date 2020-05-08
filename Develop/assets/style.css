@@ -1,0 +1,25 @@
+html {
+    box-sizing: border-box;
+  }
+body{
+    background-color: cream;
+}
+.container-fluid{
+    color:black;
+}
+h2{
+    color:black ;
+}
+.card{
+    background-color: bisque;
+    margin: 0.5em;
+}
+.team-heading{
+    background-color: bisque;
+}
+i{
+    color:blue;
+}
+li{
+    font-style: italic;
+}
