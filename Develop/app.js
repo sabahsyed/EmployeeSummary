@@ -9,7 +9,7 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
-const team = [];
+var team = [];
 
 managerQuestions();
 function managerQuestions(){
@@ -126,7 +126,6 @@ function internQuestions(){
 
 
 function addTeamMember(){
-
     inquirer.prompt([
         {
             name: "member",
@@ -146,24 +145,15 @@ function addTeamMember(){
         else if(response.member === "Intern"){
             internQuestions();
         }else{
-            // // After you have your html, you're now ready to create an HTML file using the HTML
-// // returned from the `render` function. Now write it to a file named `team.html` in the
-// // `output` folder. You can use the variable `outputPath` above target this location.
-// // Hint: you may need to check if the `output` folder exists and create it if it
-// // does not.
-console.log(team);
-console.log(outputPath, render);
-            fs.writeFile(outputPath, render(team),function(error){
-                if (error) return console.log(error);
-                console.log("Team.html created sucessfully!!")
-            });
-            
-            process.exit(0);
-        }  
-    })
+            console.log("TEAM IS " + team);
+            console.log("PATH IS "+ outputPath, render); 
+            fs.writeFile(outputPath, render(team), (err) => {
+            if (err) {
+              throw error;}  
+            })
+        }       
+    });
 }
-
-
 
 
 
@@ -200,5 +190,8 @@ console.log(outputPath, render);
 // // object with the correct structure and methods. This structure will be crucial in order
 // // for the provided `render` function to work! ```
 
-
-  
+ // // After you have your html, you're now ready to create an HTML file using the HTML
+// // returned from the `render` function. Now write it to a file named `team.html` in the
+// // `output` folder. You can use the variable `outputPath` above target this location.
+// // Hint: you may need to check if the `output` folder exists and create it if it
+// // does not.
