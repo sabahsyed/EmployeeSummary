@@ -34,21 +34,13 @@ function managerQuestions(){
             type: "number",
             message : "What is your manager's number?"
         },
-        {
-            name: "member",
-            type : "list",
-            message : "What type of team members would you like to add ?",
-            choices: [
-                "Engineer",
-                "Intern",
-                "I do not want to add any more memebers",
-            ]
-        }
         
-    ]).then(function(response){
+    ]).then(response =>{
+        console.log("Mangers ANswers ");
         const manager = new Manager(response.name,response.email,response.id,response.officeNumber);
+        //Add all memeber info to the array 
         team.push(manager);
-        addTeamMember(response);
+        addTeamMember();
     })
     .catch(error => {
         if(error.isTtyError) {
@@ -79,22 +71,12 @@ function engineerQuestions(){
             name: "github",
             type: "input",
             message : "What is your manager's GitHub username?"
-        },
-        {
-            name: "member",
-            type : "list",
-            message : "What type of team members would you like to add ?",
-            choices: [
-                "Engineer",
-                "Intern",
-                "I do not want to add any more memebers",
-            ]
         }
         
     ]).then(function(response){
         const engineer = new Engineer(response.name,response.email,response.id,response.github);
         team.push(engineer);
-        addTeamMember(response);
+        addTeamMember();
     })
     .catch(error => {
         if(error.isTtyError) {
@@ -126,22 +108,12 @@ function internQuestions(){
             name: "school",
             type: "input",
             message : "What is your intern's school?"
-        },
-        {
-            name: "member",
-            type : "list",
-            message : "What type of team members would you like to add ?",
-            choices: [
-                "Engineer",
-                "Intern",
-                "I do not want to add any more memebers",
-            ]
         }
         
     ]).then(function(response){
-        const engineer = new Engineer(response.name,response.email,response.id,response.github);
-        team.push(engineer);
-        addTeamMember(response);
+        const intern = new Intern(response.name,response.email,response.id,response.github);
+        team.push(intern);
+        addTeamMember();
     })
     .catch(error => {
         if(error.isTtyError) {
@@ -153,16 +125,42 @@ function internQuestions(){
 }
 
 
-function addTeamMember(response){
-    if(response === "Engineer"){
-        engineerQuestions();
-    }
-    else if(response === "Intern"){
-        internQuestions();
-    }else{
+function addTeamMember(){
 
-    }
-    
+    inquirer.prompt([
+        {
+            name: "member",
+            type : "list",
+            message : "What type of team members would you like to add ?",
+            choices: [
+                "Engineer",
+                "Intern",
+                "I do not want to add any more members",
+            ]
+        }
+    ]).then(function(response){
+
+        if(response.member === "Engineer"){
+            engineerQuestions();
+        }
+        else if(response.member === "Intern"){
+            internQuestions();
+        }else{
+            // // After you have your html, you're now ready to create an HTML file using the HTML
+// // returned from the `render` function. Now write it to a file named `team.html` in the
+// // `output` folder. You can use the variable `outputPath` above target this location.
+// // Hint: you may need to check if the `output` folder exists and create it if it
+// // does not.
+console.log(team);
+console.log(outputPath, render);
+            fs.writeFile(outputPath, render(team),function(error){
+                if (error) return console.log(error);
+                console.log("Team.html created sucessfully!!")
+            });
+            
+            process.exit(0);
+        }  
+    })
 }
 
 
