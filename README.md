@@ -38,3 +38,4 @@ The project must generate a team.html page in the output directory, that display
 ![Screenshot](https://github.com/sabahsyed/EmployeeSummary/blob/master/Develop/screenshots/Screen%20Shot%202020-05-08%20at%2011.27.15%20PM.png)
 ## GIFs
 
+![EmployeeSummary](https://github.com/sabahsyed/EmployeeSummary/blob/master/Develop/screenshots/ezgif.com-optimize.gif)
