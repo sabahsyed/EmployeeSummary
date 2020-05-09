@@ -36,9 +36,7 @@ function managerQuestions(){
         },
         
     ]).then(response =>{
-        console.log("Mangers ANswers ");
         const manager = new Manager(response.name,response.email,response.id,response.officeNumber);
-        //Add all memeber info to the array 
         team.push(manager);
         addTeamMember();
     })
@@ -145,8 +143,6 @@ function addTeamMember(){
         else if(response.member === "Intern"){
             internQuestions();
         }else{
-            console.log("TEAM IS " + team);
-            console.log("PATH IS "+ outputPath, render); 
             fs.writeFile(outputPath, render(team), (err) => {
             if (err) {
               throw error;}  

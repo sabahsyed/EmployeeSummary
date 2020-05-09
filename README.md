@@ -32,3 +32,7 @@ The project must generate a team.html page in the output directory, that display
 * ID
 * Role-specific property (School, link to GitHub profile, or office number)
 
+## Screenshots
+## GIFs
+<iframe src="https://drive.google.com/file/d/1A7PrfuRTsuNo2mc31YOPf0bcx97zqES6/preview" width="640" height="480"></iframe>
+
