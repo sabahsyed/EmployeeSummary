@@ -33,6 +33,8 @@ The project must generate a team.html page in the output directory, that display
 * Role-specific property (School, link to GitHub profile, or office number)
 
 ## Screenshots
+![Screenshot](https://github.com/sabahsyed/EmployeeSummary/blob/master/Develop/screenshots/Screen%20Shot%202020-05-08%20at%2011.25.51%20PM.png)
+![Screenshot](https://github.com/sabahsyed/EmployeeSummary/blob/master/Develop/screenshots/Screen%20Shot%202020-05-08%20at%2011.26.47%20PM.png)
+![Screenshot](https://github.com/sabahsyed/EmployeeSummary/blob/master/Develop/screenshots/Screen%20Shot%202020-05-08%20at%2011.27.15%20PM.png)
 ## GIFs
-<iframe src="https://drive.google.com/file/d/1A7PrfuRTsuNo2mc31YOPf0bcx97zqES6/preview" width="640" height="480"></iframe>
 
