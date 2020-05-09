@@ -5,21 +5,26 @@ body{
     background-color: cream;
 }
 .container-fluid{
-    color:black;
+    color:white;
 }
 h2{
-    color:black ;
+    text-align: center;
+    color:white ;
 }
 .card{
-    background-color: bisque;
+    background-color:#40d1c0 ;
     margin: 0.5em;
 }
 .team-heading{
-    background-color: bisque;
+    background-color: #40d1c0;
 }
 i{
     color:blue;
 }
 li{
     font-style: italic;
+}
+h3{
+    text-align: center;
+    color:black;
 }
